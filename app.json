@@ -1,21 +1,21 @@
 {
-  "expo": {
-    "scheme": "acme",
-    "userInterfaceStyle": "automatic",
-    "orientation": "default",
-    "web": {
-      "output": "static",
-      "bundler": "metro"
-    },
-    "plugins": [
-      [
-        "expo-router",
-        {
-          "origin": "https://n"
-        }
-      ]
-    ],
-    "name": "aora",
-    "slug": "aora"
-  }
+	"expo": {
+		"scheme": "Aora",
+		"userInterfaceStyle": "automatic",
+		"orientation": "default",
+		"web": {
+			"output": "static",
+			"bundler": "metro"
+		},
+		"plugins": [
+			[
+				"expo-router",
+				{
+					"origin": "https://n"
+				}
+			]
+		],
+		"name": "aora",
+		"slug": "aora"
+	}
 }
