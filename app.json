@@ -15,6 +15,10 @@
 				}
 			]
 		],
+		"ios": {
+			"supportsTablet": true,
+			"package": "com.jsm.aora-vierin"
+		},
 		"name": "aora",
 		"slug": "aora"
 	}
