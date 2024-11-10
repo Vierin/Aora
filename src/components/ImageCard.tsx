@@ -6,8 +6,8 @@ const ImageCard = ({
 	image: {
 		title,
 		prompt,
-		Image: image,
-		users: { username, avatar },
+		image,
+		creator: { username, avatar },
 	},
 }) => {
 	return (

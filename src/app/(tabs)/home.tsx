@@ -15,11 +15,13 @@ import EmptyState from '@/components/EmptyState';
 import { getAllPosts, getLatestPosts } from '@/lib/appwriteConfig';
 import useAppwrite from '@/lib/useAppwrite';
 import ImageCard from '@/components/ImageCard';
+import { useGlobalContext } from '@/context/GlobalProvider';
 
 const Home = () => {
 	const { data: posts, isLoading, refetch } = useAppwrite(getAllPosts);
 	const { data: latestPosts } = useAppwrite(getLatestPosts);
 	const [refreshing, setRefreshing] = useState(false);
+	const { user, setUser, isLogged, setIsLogged } = useGlobalContext();
 
 	const onRefreshing = async () => {
 		setRefreshing(true);
@@ -38,9 +40,11 @@ const Home = () => {
 						<View className="flex justify-between items-start flex-row mb-6">
 							<View>
 								<Text className="font-pmedium text-sm text-gray-100">
-									Welcome Back
+									Welcome Back,
 								</Text>
-								<Text className="text-2xl font-semibold text-white">Ivan</Text>
+								<Text className="text-2xl font-semibold text-white">
+									{user?.username}
+								</Text>
 							</View>
 							<View className="mt-1.5">
 								<Image

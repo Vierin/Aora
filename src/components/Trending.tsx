@@ -1,21 +1,21 @@
 import { View, Text, FlatList, Image } from 'react-native';
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import * as Animatable from 'react-native-animatable';
 
 const zoomIn = {
-	0: {
+	from: {
 		scale: 0.9,
 	},
-	1: {
+	to: {
 		scale: 1,
 	},
 };
 
 const zoomOut = {
-	0: {
+	from: {
 		scale: 1,
 	},
-	1: {
+	to: {
 		scale: 0.9,
 	},
 };
@@ -28,7 +28,7 @@ const TrendingItem = ({ activeItem, item }) => {
 			duration={500}
 		>
 			<Image
-				source={{ uri: item.Image }}
+				source={{ uri: item.image }}
 				className="w-52 h-72 rounded-[33px] mt-3 bg-white/10"
 				resizeMode="cover"
 			/>
@@ -39,11 +39,11 @@ const TrendingItem = ({ activeItem, item }) => {
 const Trending = ({ posts }) => {
 	const [activeItem, setActiveItem] = useState(posts[1]);
 
-	const viewableItemsChanged = ({ viewableItems }) => {
+	const viewableItemsChanged = useCallback(({ viewableItems }) => {
 		if (viewableItems.length > 0) {
 			setActiveItem(viewableItems[0].key);
 		}
-	};
+	}, []);
 
 	return (
 		<FlatList
@@ -57,7 +57,7 @@ const Trending = ({ posts }) => {
 			viewabilityConfig={{
 				itemVisiblePercentThreshold: 70,
 			}}
-			contentOffset={{ x: 170 }}
+			contentOffset={{ x: 170, y: 0 }}
 		/>
 	);
 };

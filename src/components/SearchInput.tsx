@@ -11,7 +11,7 @@ import React, { useState } from 'react';
 import { icons } from '@/constants';
 import { router, usePathname } from 'expo-router';
 
-const SearchInput = ({ initialQuery }) => {
+const SearchInput = ({ initialQuery = null }) => {
 	const pathname = usePathname();
 	const [query, setQuery] = useState(initialQuery || '');
 

@@ -1,10 +1,6 @@
 import { getCurrentUser } from '@/lib/appwriteConfig';
+import { User } from '@/types/user';
 import React, { createContext, useContext, useEffect, useState } from 'react';
-
-interface User {
-	id: string;
-	email: string;
-}
 
 interface GlobalContextType {
 	isLogged: boolean;
