@@ -27,7 +27,7 @@ const Create = () => {
 
 	const openPicker = async () => {
 		const result = await DocumentPicker.getDocumentAsync({
-			type: ['image/png', 'image/jpg'],
+			type: ['image/png', 'image/jpg', 'image/jpeg'],
 		});
 
 		if (!result.canceled) {
@@ -63,7 +63,7 @@ const Create = () => {
 	};
 
 	return (
-		<SafeAreaView className="bg-primary h-full">
+		<SafeAreaView className="bg-primary min-h-[100vh]">
 			<ScrollView className="px-4 my-6">
 				<Text className="text-2xl text-white font-psemibold">Uplaod Image</Text>
 
